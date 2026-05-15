@@ -2,13 +2,16 @@
 #include "motor.h"
 #include "ultrasonic.h"
 
+// تعريف الدالة اللي في startup.cpp عشان الـ Compiler يشوفها
+void system_init();
+
 static DigitalOut car_led(LED1);
 static constexpr float LIMIT_HIGH = 25.0f;
 static constexpr float LIMIT_LOW  = 15.0f;
 static constexpr float CAR_SPEED  = 0.35f;
 
 int main() {
-    motor_init(); 
+    system_init(); // تهيئة الموتور والـ Interrupts معاً
     bool active = false;
 
     while (true) {
