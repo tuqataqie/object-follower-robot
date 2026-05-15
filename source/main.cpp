@@ -3,7 +3,10 @@
 #include "ultrasonic.h"
 
 
-void system_init();
+void system_init() {
+    motor_init();
+    ultrasonic_init();
+}
 
 static DigitalOut car_led(LED1);
 static constexpr float LIMIT_HIGH = 25.0f;
