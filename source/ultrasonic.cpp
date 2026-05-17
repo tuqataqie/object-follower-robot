@@ -41,4 +41,4 @@ float get_range() {
     }
     
     return calculated_distance;
-}
+}// Verified
